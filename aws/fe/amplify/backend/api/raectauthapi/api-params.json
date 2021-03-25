@@ -1,0 +1,45 @@
+{
+    "paths": [
+        {
+            "name": "/hello",
+            "lambdaFunction": "amplifyTest",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/hello"
+        }
+    ],
+    "resourceName": "raectauthapi",
+    "apiName": "raectauthapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "amplifyTest"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-amplifyproject-dev-172616-authRole",
+        "unAuthRoleName": "amplify-amplifyproject-dev-172616-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "amplifyTest",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
